@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+    <h1>十进制转二进制</h1>
+    <div id="app">
+        <form v-on:submit.prevent="submitted" action="">
+            <input type="text" v-model="my_input">
+            <input type="submit" value="验证">
+        </form>
+        <button v-on:click="reload" >下一个</button>
+        <h2><span v-for="(item,index) in input_nums" :class="red_or_green(item,index)">{{item}}</span></h2>
+        <h2>十进制数：{{randomNumD}}</h2>
+        <div>
+            <button v-on:click="answer">显示答案</button>
+            <h2 v-show="is_answer">答案：{{randomNumB}}</h2>
+        </div>
+
+
+        <div v-show="result">
+            <h2 v-if="is_true">正确</h2>
+            <h2 v-else>错误</h2>
+        </div>
+
+    </div>
+    <script src="../libs/vue2.6.6.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
