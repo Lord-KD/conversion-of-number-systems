@@ -6,29 +6,33 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="lib/normalize8.0.1.css">
     <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
-    <h1>十进制转二进制</h1>
-    <div id="app">
-        <form v-on:submit.prevent="submitted" action="">
-            <input type="text" v-model="my_input">
-            <input type="submit" value="验证">
-        </form>
-        <button v-on:click="reload" >下一个</button>
-        <h2><span v-for="(item,index) in input_nums" :class="red_or_green(item,index)">{{item}}</span></h2>
-        <h2>十进制数：{{randomNumD}}</h2>
-        <div>
-            <button v-on:click="answer">显示答案</button>
-            <h2 v-show="is_answer">答案：{{randomNumB}}</h2>
+    <div class="main">
+        <h1>十进制转二进制</h1>
+        <div id="app">
+            <div class="question">十进制数：{{randomNumD}}</div>
+            <form v-on:submit.prevent="submitted" action="">
+                <input class="input" type="text" v-model="my_input" placeholder="请输入转换二进制结果">
+                <input class="button" type="submit" value="验证">
+            </form>
+
+            <div class="my-input">
+                <span v-for="(item,index) in input_nums" :class="red_or_green(item,index)">{{item}}</span>
+            <div class="result" v-show="result">
+                <div v-if="is_true">正确</div>
+                <div v-else>错误</div>
+            </div>
+            </div>
+            <div>
+                <button class="button" v-on:click="answer">显示答案</button>
+                <div class="answer" v-show="is_answer">答案：{{randomNumB}}</div>
+            </div>
+
+            <button class="button" v-on:click="reload" >下一个</button>
         </div>
-
-
-        <div v-show="result">
-            <h2 v-if="is_true">正确</h2>
-            <h2 v-else>错误</h2>
-        </div>
-
     </div>
     <script src="lib/vue2.6.6.js"></script>
     <script src="js/main.js"></script>
