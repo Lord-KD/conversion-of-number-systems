@@ -21,7 +21,8 @@ let app = new Vue({
         submitted: function () {
             this.result = true;
 
-            if (this.input_nums.length) {
+            if (this.my_input !== null) {
+                console.log(this.my_input)
                 this.input_nums = this.my_input.split('');
             }
 
