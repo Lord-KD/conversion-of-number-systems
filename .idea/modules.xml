@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/conversion-of-number-systems.iml" filepath="$PROJECT_DIR$/.idea/conversion-of-number-systems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/binary_conversion.iml" filepath="$PROJECT_DIR$/.idea/binary_conversion.iml" />
     </modules>
   </component>
 </project>
